@@ -33,22 +33,24 @@ for i, h in enumerate(hosts):
 if not success:
     core.warning(f'{err}')
 
-success, err = False, None
+success1, err1 = False, None
 
 for i, h in enumerate(host1s):
     # 依次尝试每个 host
     try:
         action = Action(email, passwd, host=h)
         action.run()
-        success = True
+        success1 = True
         # 成功则终止
         break
     except Exception as e:
-        err = str(e)
-        if i != len(hosts) - 1:
+        err1 = str(e)
+        if i != len(host1s) - 1:
             core.warning(f'host：{h}, 错误信息：{str(e)}')
-if not success:
-    core.warning(f'{err}')
+if not success1:
+    core.warning(f'{err1}')
 
 if not success:
     core.set_failed(f'{err}')
+if not success1:
+    core.set_failed(f'{err1}')
