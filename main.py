@@ -31,7 +31,7 @@ for i, h in enumerate(hosts):
         if i != len(hosts) - 1:
             core.warning(f'host：{h}, 错误信息：{str(e)}')
 if not success:
-    core.set_failed(f'{err}')
+    core.warning(f'{err}')
 
 success, err = False, None
 
@@ -48,4 +48,4 @@ for i, h in enumerate(host1):
         if i != len(hosts) - 1:
             core.warning(f'host：{h}, 错误信息：{str(e)}')
 if not success:
-    core.set_failed(f'{err}')
+    core.warning(f'{err}')
