@@ -6,7 +6,7 @@ from app.action import Action
 email = core.get_input('email', required=True)
 passwd = core.get_input('passwd', required=True)
 host = core.get_input('host') or 'cordcloud.us,cordcloud.one,cordcloud.biz,c-cloud.xyz'
-host1 = 'taggood-4.xyz,tagvpn.vip'
+host1 = 'taggood-5.xyz,tagvpn.vip'
 
 # host 预处理：切分、过滤空值
 hosts = [h for h in host.split(',') if h]
